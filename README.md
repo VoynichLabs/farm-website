@@ -2,6 +2,14 @@
 
 **This is NOT a real farm business.** This is a portfolio demonstration website built on Mark Barney's actual hobby farm (653 Pudding Hill Road, Hampton, Connecticut) to showcase what you could build for REAL working farms (alpaca operations, goat farms, chicken operations, etc.).
 
+ I copied the implementation-plan example files from C:\Projects\ModelCompare into a clearly labeled folder:
+
+reference/modelcompare-examples
+I also added a handoff manifest so the next assistant can immediately see what was imported and what was missing:
+
+IMPORT_MANIFEST.md
+
+
 ## The Farm
 
 **Owner:** Mark Barney  
