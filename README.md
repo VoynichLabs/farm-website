@@ -1,54 +1,37 @@
-# Farm Website - Egg Sales & E-Commerce
+# Mark's Hobby Farm - E-Commerce Portfolio Demo
 
-Farm e-commerce platform for farm.markbarney.net featuring:
-- Product browsing and shopping cart
-- Stripe payment processing
-- Google OAuth authentication
-- Order management and tracking
-- Email notifications
+**This is NOT a real farm business.** This is a portfolio demonstration website built on Mark Barney's actual hobby farm (653 Pudding Hill Road, Hampton, Connecticut) to showcase what you could build for REAL working farms (alpaca operations, goat farms, chicken operations, etc.).
 
-## Project Status
+## The Farm
 
-**Phase:** Design & Planning (Complete)  
-**Implementation:** Ready for Development
+**Owner:** Mark Barney  
+**Location:** Hampton, Connecticut (NECCOG member town)  
+**Animals:** Chickens (hobby farm), Pawel & Pawleen (Yorkshire Terriers)  
+**Products:** Eggs (the hero product for this demo)
 
-See `IMPLEMENTATION_PLAN.md` for detailed setup and build instructions.
+## The Purpose
 
-## Quick Links
+This website is a **proof-of-concept** for prospecting small working farms in Connecticut/Rhode Island. When Mark talks to goat farmers, alpaca breeders, and chicken operations about web presence, he shows them this: "Here's what I built for my own farm. You could have something just like this—but for YOUR products, YOUR prices, YOUR customers."
 
-- [Implementation Plan](./IMPLEMENTATION_PLAN.md)
-- [Live Site](https://farm.markbarney.net)
+It's a working demo that proves the technical capability and the business model.
 
-## Architecture
+## What You're Building
 
-- **Backend:** Node.js + Express + TypeScript
-- **Frontend:** React + TypeScript + Vite
-- **Database:** PostgreSQL with Drizzle ORM
-- **Authentication:** Google OAuth via Passport.js
-- **Payments:** Stripe API with webhook handling
+A simple e-commerce site where:
+1. Customers browse farm products (eggs in this case)
+2. Add items to cart
+3. Check out with Stripe
+4. Receive order confirmation via email
+5. Farm owner gets notification to fulfill order
 
-## Getting Started
+**That's it.** No fancy features. Just clean, functional, working e-commerce that real small farms can understand and want.
 
-See `IMPLEMENTATION_PLAN.md` for complete setup instructions.
+## Critical Context for Next Assistant
 
-## Development
+- **This is a TEST CASE for the prospecting business** — not a money-maker, not a real farm business
+- **Realistic data matters** — use actual chicken/egg details, not fake inventory
+- **Portfolio quality required** — this website gets shown to real farm customers
+- **Simplicity is a feature** — small farmers don't want complexity; they want it to work
+- **Make it LOOK like a real farm website** — not a generic template, but something with actual farm personality
 
-```bash
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env
-
-# Run development server
-npm run dev
-
-# Run tests
-npm run test
-```
-
-## Deployment
-
-Deploy to farm.markbarney.net via your preferred hosting platform (Railway, Vercel, etc.).
-
-See deployment section in `IMPLEMENTATION_PLAN.md` for details.
+See `STRIPE_INTEGRATION_PLAN.md` for implementation details.
