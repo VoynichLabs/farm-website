@@ -8,7 +8,7 @@
 
 ## Executive Summary
 
-Add Stripe payment processing to the farm website so customers can purchase eggs online. This implementation reuses proven patterns from the ModelCompare project (`/mnt/d/1Projects/ModelCompare/`) which has a complete, tested Stripe integration including:
+Add Stripe payment processing to the farm website so customers can purchase eggs online. This implementation reuses proven patterns from the ModelCompare project (`C:\\Projects\\ModelCompare`) which has a complete, tested Stripe integration including:
 - Google OAuth authentication
 - Credit system (for our case: egg inventory/cart)
 - Stripe payment processing with webhook handling
@@ -92,7 +92,7 @@ products table:
 
 **Source Files to Copy:**
 ```
-From: /mnt/d/1Projects/ModelCompare/
+From: C:\\Projects\\ModelCompare
 To:   /mnt/c/Users/User/.openclaw/workspace/ai-my-org/server/
 
 - server/auth.ts          → auth.ts (Google OAuth setup)
@@ -112,7 +112,7 @@ To:   /mnt/c/Users/User/.openclaw/workspace/ai-my-org/server/
 
 **Source Files to Copy:**
 ```
-From: /mnt/d/1Projects/ModelCompare/client/src/
+From: C:\\Projects\\ModelCompare\\client\\src
 To:   /mnt/c/Users/User/.openclaw/workspace/ai-my-org/client/src/
 
 Components:
@@ -367,7 +367,7 @@ stripe listen --forward-to localhost:3000/api/stripe/webhook
 ### Complete List for Copying
 
 ```
-/mnt/d/1Projects/ModelCompare/
+C:\\Projects\\ModelCompare
 
 Backend:
 ├── server/auth.ts                       (copy as-is)

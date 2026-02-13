@@ -43,7 +43,7 @@ That document includes:
 - PostgreSQL database
 - Stripe account (test mode for development)
 - Google OAuth credentials
-- Access to ModelCompare project (`/mnt/d/1Projects/ModelCompare/`) for reference
+- Access to ModelCompare project (`C:\Projects\ModelCompare`) for reference
 - Actual farm details: Mark Barney's hobby farm in Hampton, CT with chickens
 
 ## What the Next Assistant Should Know
