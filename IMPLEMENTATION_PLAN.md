@@ -17,7 +17,7 @@ The complete step-by-step implementation is in `STRIPE_INTEGRATION_PLAN.md` (thi
 
 That document includes:
 - Phase-by-phase breakdown
-- Files to copy from ModelCompare project (`/mnt/d/1Projects/ModelCompare/`)
+- Files to copy from ModelCompare project (`C:\Projects\ModelCompare`)
 - Database schema design
 - Backend route specifications
 - Frontend component development
