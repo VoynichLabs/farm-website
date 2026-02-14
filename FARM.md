@@ -6,10 +6,11 @@ Working farm with specialty egg production and Yorkshire Terrier breeding operat
 ## Birds & Eggs
 
 ### Roosters (Breeding Males)
-- **Lil Big Red Jr.** — One of two virile, healthy roosters. Excellent fertility and vitality.
-- **Whitey Redlegs** — Second rooster. Also highly fertile and vigorous.
+- **Lil Big Red Jr.** — He is the spawn of the original Big Red and one of the many hens. He was hatched right here on the farm.
+- **Whitey Redlegs** — Whitey is the son of Little Big Red Jr. and one of the Easter Egger hens. He was hatched from a blue egg right here on my desk.
 
 ### Hens (Laying Flock)
+- **Birdadette** — She was hatched from a blue egg here in May of 2025. She is the spawn of Lil Big Red Jr. and one of the Easter Eggers.
 - **Easter Eggers** — Primary breed for blue egg production
 - **Speckled Sussex** — Heritage breed, good layers, distinctive speckled plumage
 - **Barred Rock** — Classic dual-purpose breed, reliable production
@@ -27,11 +28,11 @@ Working farm with specialty egg production and Yorkshire Terrier breeding operat
 ## Dogs
 
 ### Yorkshire Terriers
-- **Pawel** — Mark's first Yorkie, named in Minsk. Service dog, registered and certified. Mark trained him through full certification process.
-- **Pawleen** — Second Yorkie, obtained from Pennsylvania breeder. Known as "too big" by original breeder.
+- **Pawel** — Mark's first Yorkie, named in Minsk. Service dog, registered and certified. Mark trained him through full certification process. Born January 14th, 2021.
+- **Pawleen** — Second Yorkie, obtained from Pennsylvania breeder. Known as "too big" by original breeder. She weighs in at a massive 14 pounds. Born October 30th, 2022. 
 
 ### Therapy/Service Certification
-- Mark is certified to certify therapy dogs
+- Mark knows how to navigate the training and certification of service dogs
 - Pawel completed full service dog certification under Mark's training
 - Available to help others with the certification process (currently not offered as formal service)
 
