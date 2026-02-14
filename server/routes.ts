@@ -67,7 +67,8 @@ router.get("/products", async (_req, res) => {
 // Get single product by ID
 router.get("/products/:id", async (req, res) => {
   try {
-    const product = await storage.getProductById(req.params.id);
+    const productId = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
+    const product = await storage.getProductById(productId);
     if (!product) return res.status(404).json({ error: "Product not found" });
     res.json({ product });
   } catch (err) {
@@ -116,7 +117,8 @@ router.get("/orders", isAuthenticated, async (req, res) => {
 // Get single order by ID (only if it belongs to the user)
 router.get("/orders/:id", isAuthenticated, async (req, res) => {
   try {
-    const order = await storage.getOrderById(req.params.id);
+    const orderId = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
+    const order = await storage.getOrderById(orderId);
     if (!order || order.userId !== req.user!.id) {
       return res.status(404).json({ error: "Order not found" });
     }

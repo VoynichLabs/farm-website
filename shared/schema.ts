@@ -12,7 +12,7 @@
 import { pgTable, text, integer, timestamp, boolean } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
 
-// Users table — customers who sign in via Google OAuth
+// Users table -- customers who sign in via Google OAuth
 export const users = pgTable("users", {
   id: text("id").primaryKey().default(sql`gen_random_uuid()`),
   email: text("email"),
@@ -25,7 +25,7 @@ export const users = pgTable("users", {
   updatedAt: timestamp("updated_at").defaultNow(),
 });
 
-// Products table — egg products available for purchase
+// Products table -- egg products available for purchase
 export const products = pgTable("products", {
   id: text("id").primaryKey().default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
@@ -38,7 +38,7 @@ export const products = pgTable("products", {
   updatedAt: timestamp("updated_at").defaultNow(),
 });
 
-// Orders table — tracks each purchase through Stripe
+// Orders table -- tracks each purchase through Stripe
 export const orders = pgTable("orders", {
   id: text("id").primaryKey().default(sql`gen_random_uuid()`),
   userId: text("user_id").references(() => users.id),
@@ -53,7 +53,7 @@ export const orders = pgTable("orders", {
   updatedAt: timestamp("updated_at").defaultNow(),
 });
 
-// Sessions table — for express-session with connect-pg-simple
+// Sessions table -- for express-session with connect-pg-simple
 export const sessions = pgTable("sessions", {
   sid: text("sid").primaryKey(),
   sess: text("sess").notNull(),
