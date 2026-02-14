@@ -1,10 +1,13 @@
 /**
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
- * PURPOSE: Storage layer for farm website. Provides CRUD operations for
- *          users, products, and orders using Drizzle ORM against PostgreSQL.
- *          Adapted from ModelCompare's DbStorage pattern, simplified for farm use.
- * SRP/DRY check: Pass
+ * PURPOSE: Storage layer (data access) for Mark's Hobby Farm. Provides CRUD operations
+ *          for users (upsert from Google OAuth), products (list active, get by ID, decrement
+ *          inventory), and orders (create, get by ID/user/Stripe intent, update status).
+ *          Uses Drizzle ORM against Neon PostgreSQL via server/db.ts.
+ *          Adapted from ModelCompare DbStorage pattern -- credits/reservations removed.
+ *          Consumed by server/routes.ts, server/stripe.ts, server/auth.ts.
+ * SRP/DRY check: Pass - single storage class, singleton export, no raw SQL elsewhere
  */
 
 import { db } from "./db.js";

@@ -1,8 +1,11 @@
 /**
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
- * PURPOSE: Order history page — shows all past orders for the logged-in user.
- * SRP/DRY check: Pass
+ * PURPOSE: Order history page for authenticated users of Mark's Hobby Farm.
+ *          Fetches orders from /api/orders, displays order cards with status badges,
+ *          item breakdown, and totals. Requires Google OAuth authentication.
+ *          Depends on useAuth hook, TanStack React Query, wouter, lucide-react.
+ * SRP/DRY check: Pass - single order history page, no duplication
  */
 
 import { useQuery } from "@tanstack/react-query";

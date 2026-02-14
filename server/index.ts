@@ -2,9 +2,13 @@
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
  * PURPOSE: Express server entry point for Mark's Hobby Farm website.
- *          Configures middleware, auth, API routes, and static file serving.
- *          Adapted from ModelCompare server/index.ts, heavily simplified.
- * SRP/DRY check: Pass
+ *          Configures raw body capture for Stripe webhooks (must precede express.json),
+ *          standard middleware (JSON, URL-encoded), Passport auth + sessions via server/auth.ts,
+ *          validates Stripe config at startup, mounts API routes from server/routes.ts under /api,
+ *          serves Vite production build from dist/public with SPA fallback.
+ *          Adapted from ModelCompare server/index.ts -- heavily simplified.
+ *          Env vars: PORT, NODE_ENV, plus all vars required by auth.ts and stripe.ts.
+ * SRP/DRY check: Pass - single server entry, no duplication
  */
 
 import dotenv from "dotenv";
@@ -45,9 +49,9 @@ configureSession(app);
 // ── Validate Stripe config at startup ─────────────────────────
 const stripeStatus = validateStripeConfig();
 if (!stripeStatus.valid) {
-  console.warn("⚠️  Stripe config issues:", stripeStatus.errors.join("; "));
+  console.warn("[WARN] Stripe config issues:", stripeStatus.errors.join("; "));
 } else {
-  console.log("✅ Stripe configuration validated");
+  console.log("[OK] Stripe configuration validated");
 }
 
 // ── API routes under /api ─────────────────────────────────────
@@ -64,6 +68,6 @@ app.get("*", (_req, res) => {
 
 // ── Start server ──────────────────────────────────────────────
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`🐔 Farm website server running on http://localhost:${PORT}`);
+  console.log(`[farm-website] Server running on http://localhost:${PORT}`);
   console.log(`   Environment: ${process.env.NODE_ENV || "development"}`);
 });

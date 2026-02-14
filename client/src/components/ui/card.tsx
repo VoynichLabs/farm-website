@@ -1,3 +1,12 @@
+/**
+ * Author: Cascade (Claude Sonnet)
+ * Date: 2026-02-13
+ * PURPOSE: Card layout components (Card, CardHeader, CardTitle, CardDescription,
+ *          CardContent, CardFooter). Used for product cards, order cards, checkout summary.
+ *          Reuses cn() from lib/utils for Tailwind class merging.
+ * SRP/DRY check: Pass - standard shadcn/ui pattern, shared across all pages
+ */
+
 import * as React from "react";
 import { cn } from "@/lib/utils";
 

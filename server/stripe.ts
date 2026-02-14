@@ -1,10 +1,15 @@
 /**
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
- * PURPOSE: Stripe payment processing for egg orders.
- *          Creates payment intents, handles webhooks, manages order lifecycle.
- *          Adapted from ModelCompare credit-purchase flow → one-time egg purchases.
- * SRP/DRY check: Pass
+ * PURPOSE: Stripe payment processing for Mark's Hobby Farm egg orders.
+ *          createCheckoutIntent: verifies inventory, creates Stripe customer + PaymentIntent,
+ *          stores pending order in DB. handleWebhook: processes payment_intent.succeeded
+ *          (marks order completed, decrements inventory) and payment_intent.payment_failed.
+ *          validateStripeConfig: startup check for required env vars.
+ *          Env vars: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET.
+ *          Adapted from ModelCompare credit-purchase flow -- credits replaced with one-time orders.
+ *          Depends on server/storage.ts, server/db.ts, shared/schema.ts.
+ * SRP/DRY check: Pass - single Stripe module, no duplication
  */
 
 import Stripe from "stripe";

@@ -1,9 +1,11 @@
 /**
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
- * PURPOSE: Main App component with client-side routing (wouter).
- *          Wires up Navbar, cart state, and page routes.
- * SRP/DRY check: Pass
+ * PURPOSE: Main App component for Mark's Hobby Farm SPA. Provides client-side routing
+ *          via wouter (Home, Products, Cart, Orders, 404). Wires useCart hook state into
+ *          Products and Cart pages. Renders Navbar with cart count and site footer.
+ *          Depends on wouter, useCart hook, all page components, Navbar.
+ * SRP/DRY check: Pass - single root component, no duplication
  */
 
 import { Route, Switch } from "wouter";
@@ -49,8 +51,8 @@ export default function App() {
 
       {/* Footer */}
       <footer className="border-t mt-16 py-8 text-center text-sm text-gray-500">
-        <p>Mark's Hobby Farm &middot; 653 Pudding Hill Road, Hampton, CT</p>
-        <p className="mt-1">A portfolio demonstration by Mark Barney</p>
+        <p>Mark's Hobby Farm -- 653 Pudding Hill Road, Hampton, CT (Windham County)</p>
+        <p className="mt-1">Specialty egg production and Yorkshire Terrier breeding</p>
       </footer>
     </div>
   );

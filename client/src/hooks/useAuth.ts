@@ -1,10 +1,12 @@
 /**
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
- * PURPOSE: Authentication hook. Fetches current user from /api/auth/me,
- *          provides login/logout helpers, and exposes auth state.
- *          Adapted from ModelCompare useAuth pattern.
- * SRP/DRY check: Pass
+ * PURPOSE: Authentication hook for Mark's Hobby Farm. Fetches current user session
+ *          from /api/auth/me via TanStack React Query, provides Google OAuth login
+ *          redirect, POST logout, and user refresh. Exposes isAuthenticated, user object,
+ *          and loading state. Adapted from ModelCompare useAuth pattern.
+ *          Depends on @tanstack/react-query.
+ * SRP/DRY check: Pass - single auth hook used by Navbar, Cart, Orders
  */
 
 import { useQuery, useQueryClient } from "@tanstack/react-query";

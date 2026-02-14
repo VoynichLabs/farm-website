@@ -1,10 +1,13 @@
 /**
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
- * PURPOSE: Google OAuth authentication using Passport.js.
- *          Handles user login, session management, and auth middleware.
- *          Adapted from ModelCompare auth.ts, simplified for farm website.
- * SRP/DRY check: Pass
+ * PURPOSE: Google OAuth authentication for Mark's Hobby Farm using Passport.js.
+ *          Configures GoogleStrategy (upserts users via storage.upsertUser), express-session
+ *          middleware, serialize/deserialize, and isAuthenticated middleware for protected routes.
+ *          Env vars: GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, SESSION_SECRET, GOOGLE_CALLBACK_URL.
+ *          Adapted from ModelCompare auth.ts -- credit merging logic removed.
+ *          Consumed by server/index.ts (setup) and server/routes.ts (middleware).
+ * SRP/DRY check: Pass - single auth module, no duplication
  */
 
 import passport from "passport";

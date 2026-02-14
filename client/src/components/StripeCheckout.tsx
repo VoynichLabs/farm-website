@@ -1,10 +1,12 @@
 /**
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
- * PURPOSE: Stripe Elements checkout component for completing egg purchases.
- *          Wraps Stripe CardElement in a clean payment form.
+ * PURPOSE: Stripe Elements checkout component for completing egg purchases on Mark's Hobby Farm.
+ *          Wraps Stripe CardElement in a payment form with order summary, error handling,
+ *          and processing states. Outer StripeCheckout wrapper provides Elements context.
  *          Adapted from ModelCompare RealStripeCheckout.tsx.
- * SRP/DRY check: Pass
+ *          Depends on @stripe/react-stripe-js, @stripe/stripe-js, VITE_STRIPE_PUBLIC_KEY env var.
+ * SRP/DRY check: Pass - single checkout component, no duplication
  */
 
 import { useState } from "react";

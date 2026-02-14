@@ -1,10 +1,12 @@
 /**
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
- * PURPOSE: Database schema for Mark's Hobby Farm e-commerce.
- *          Defines users, products, orders tables using Drizzle ORM.
- *          Adapted from ModelCompare credit system → farm order system.
- * SRP/DRY check: Pass
+ * PURPOSE: Database schema for Mark's Hobby Farm e-commerce (653 Pudding Hill Road, Hampton, CT).
+ *          Defines users (Google OAuth), products (egg listings), orders (Stripe-linked purchases),
+ *          and sessions tables using Drizzle ORM against Neon PostgreSQL.
+ *          Adapted from ModelCompare credit system -- credits replaced with one-time egg orders.
+ *          Used by server/storage.ts (CRUD), server/stripe.ts (order lifecycle), scripts/seed-products.ts.
+ * SRP/DRY check: Pass - single schema file, shared across server and client types
  */
 
 import { pgTable, text, integer, timestamp, boolean } from "drizzle-orm/pg-core";

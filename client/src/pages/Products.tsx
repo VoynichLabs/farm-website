@@ -1,10 +1,10 @@
 /**
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
- * PURPOSE: Product listing page — shows all available egg products.
- *          Customers can add items to their cart from here.
- *          Adapted from ModelCompare PricingTable pattern.
- * SRP/DRY check: Pass
+ * PURPOSE: Product listing page for Mark's Hobby Farm egg products.
+ *          Fetches products from /api/products (Blue Eggs, Heritage Mix, Hatching Eggs)
+ *          and renders cards with add-to-cart. Adapted from ModelCompare PricingTable pattern.
+ * SRP/DRY check: Pass - verified no duplicate product listing components
  */
 
 import { useQuery } from "@tanstack/react-query";
@@ -68,7 +68,7 @@ export function Products({ onAddToCart }: ProductsProps) {
         <Egg className="w-12 h-12 mx-auto text-gray-400" />
         <h2 className="text-xl font-semibold text-gray-900">No Products Available</h2>
         <p className="text-gray-500">
-          Check back soon — we're restocking our eggs!
+          Check back soon -- the hens are working on it.
         </p>
       </div>
     );
@@ -77,8 +77,11 @@ export function Products({ onAddToCart }: ProductsProps) {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
       <div className="text-center space-y-2">
-        <h1 className="text-3xl font-bold text-gray-900">Farm Fresh Eggs</h1>
-        <p className="text-gray-600">Straight from our hens in Hampton, Connecticut</p>
+        <h1 className="text-3xl font-bold text-gray-900">Eggs from Pudding Hill Road</h1>
+        <p className="text-gray-600">
+          Fertilized eggs from our Easter Eggers, Speckled Sussex, and Barred Rock hens
+          in Hampton, Connecticut. Eat them or hatch them.
+        </p>
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -86,7 +89,7 @@ export function Products({ onAddToCart }: ProductsProps) {
           const inStock = product.inventory > 0;
           return (
             <Card key={product.id} className="flex flex-col transition hover:shadow-lg">
-              {/* Product image placeholder */}
+              {/* Product image area -- will be replaced with real photos later */}
               <div className="h-40 bg-gradient-to-br from-farm-cream to-amber-100 rounded-t-xl flex items-center justify-center">
                 <Egg className="w-16 h-16 text-farm-brown opacity-60" />
               </div>

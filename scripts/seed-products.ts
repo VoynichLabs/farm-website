@@ -1,9 +1,12 @@
 /**
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
- * PURPOSE: Seed script to populate the products table with initial egg offerings.
+ * PURPOSE: Seed script to populate the products table with real egg products
+ *          from Mark's Hobby Farm (653 Pudding Hill Road, Hampton, CT).
+ *          Products reflect actual flock: Easter Eggers (blue eggs), Speckled Sussex,
+ *          Barred Rock, and fertilized hatching eggs from Lil Big Red Jr. and Whitey Redlegs.
  *          Run with: npm run seed
- * SRP/DRY check: Pass
+ * SRP/DRY check: Pass - verified no existing seed utilities
  */
 
 import dotenv from "dotenv";
@@ -24,36 +27,46 @@ async function seed() {
 
   console.log("Seeding products...");
 
+  // Real products based on the actual flock at 653 Pudding Hill Road, Hampton, CT.
+  // Breeds: Easter Eggers, Speckled Sussex, Barred Rock.
+  // Roosters: Lil Big Red Jr. and Whitey Redlegs ensure all eggs are fertilized.
   const eggProducts = [
     {
-      name: "Brown Eggs — Dozen",
+      name: "Blue Eggs -- Dozen",
       description:
-        "A dozen farm-fresh brown eggs from our free-range hens. Rich flavor, deep orange yolks.",
+        "A dozen blue eggs from our Easter Egger hens. All eggs are fertilized by our roosters " +
+        "Lil Big Red Jr. and Whitey Redlegs, giving them a superior nutritional profile " +
+        "compared to commercial grocery store eggs. Eat them or hatch them.",
       price: 899, // $8.99
-      inventory: 50,
-      active: true,
-    },
-    {
-      name: "Mixed Heritage — Dozen",
-      description:
-        "A colorful mix of brown, blue, and green eggs from our heritage breed hens. Every box is unique.",
-      price: 1199, // $11.99
       inventory: 30,
       active: true,
     },
     {
-      name: "Jumbo Brown Eggs — Half Dozen",
+      name: "Heritage Mix -- Dozen",
       description:
-        "Six extra-large brown eggs. Perfect for baking or a hearty breakfast.",
-      price: 599, // $5.99
+        "A mixed dozen from our Speckled Sussex, Barred Rock, and Easter Egger hens. " +
+        "Every carton is different -- brown, blue, and speckled shells. " +
+        "All fertilized, all free-range on Pudding Hill Road.",
+      price: 799, // $7.99
       inventory: 40,
+      active: true,
+    },
+    {
+      name: "Hatching Eggs -- Half Dozen",
+      description:
+        "Six fertilized hatching eggs selected for hatchability. " +
+        "Rooster genetics from Lil Big Red Jr. (farm-hatched) and Whitey Redlegs " +
+        "(hatched from a blue egg right on Mark's desk). " +
+        "Incubate these to raise your own hybrid flock.",
+      price: 1499, // $14.99
+      inventory: 20,
       active: true,
     },
   ];
 
   for (const product of eggProducts) {
     await db.insert(products).values(product);
-    console.log(`  ✅ ${product.name} — $${(product.price / 100).toFixed(2)}`);
+    console.log(`  [seeded] ${product.name} -- $${(product.price / 100).toFixed(2)}`);
   }
 
   console.log("\nDone! Products seeded successfully.");

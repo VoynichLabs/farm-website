@@ -1,3 +1,12 @@
+/**
+ * Author: Cascade (Claude Sonnet)
+ * Date: 2026-02-13
+ * PURPOSE: Button component built on Radix UI Slot + class-variance-authority.
+ *          Provides variant/size props for consistent styling across the farm site.
+ *          Reuses cn() from lib/utils for Tailwind class merging.
+ * SRP/DRY check: Pass - standard shadcn/ui pattern, shared across all pages
+ */
+
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";

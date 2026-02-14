@@ -1,9 +1,11 @@
 /**
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
- * PURPOSE: Database connection using Neon serverless PostgreSQL + Drizzle ORM.
- *          Provides a single shared db instance for all storage operations.
- * SRP/DRY check: Pass
+ * PURPOSE: Database connection for Mark's Hobby Farm. Uses Neon serverless PostgreSQL
+ *          with Drizzle ORM to provide a single shared db instance. Imports full schema
+ *          from shared/schema.ts for type-safe queries. Required env var: DATABASE_URL.
+ *          Consumed by server/storage.ts and server/stripe.ts (updateOrderStripeIntent).
+ * SRP/DRY check: Pass - single DB connection module, no duplication
  */
 
 import { neon } from "@neondatabase/serverless";

@@ -1,9 +1,12 @@
 /**
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
- * PURPOSE: Shopping cart hook using React state (localStorage-persisted).
- *          Manages add/remove/update operations on cart items.
- * SRP/DRY check: Pass
+ * PURPOSE: Shopping cart hook for Mark's Hobby Farm. Persists cart items to
+ *          localStorage so cart survives page refreshes. Provides addItem, removeItem,
+ *          updateQuantity, clearCart operations plus totalPrice and itemCount derived state.
+ *          Cart is client-side only; items are sent to /api/checkout at payment time.
+ *          Depends on React useState, useEffect, useCallback.
+ * SRP/DRY check: Pass - single cart hook used by App, Cart page, Products page
  */
 
 import { useState, useEffect, useCallback } from "react";

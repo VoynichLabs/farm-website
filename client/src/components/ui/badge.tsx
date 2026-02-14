@@ -1,3 +1,12 @@
+/**
+ * Author: Cascade (Claude Sonnet)
+ * Date: 2026-02-13
+ * PURPOSE: Badge component with variant styling via class-variance-authority.
+ *          Used for product stock status, order status, and cart item counts.
+ *          Reuses cn() from lib/utils for Tailwind class merging.
+ * SRP/DRY check: Pass - standard shadcn/ui pattern, shared across all pages
+ */
+
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";

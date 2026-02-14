@@ -1,9 +1,11 @@
 /**
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
- * PURPOSE: Top navigation bar for the farm website.
- *          Shows farm branding, nav links, cart count, and auth state.
- * SRP/DRY check: Pass
+ * PURPOSE: Top navigation bar for Mark's Hobby Farm website.
+ *          Shows farm branding (Pudding Hill Road, Hampton CT), nav links,
+ *          cart item count badge, and Google OAuth auth state.
+ *          Depends on useAuth hook, wouter for routing, lucide-react for icons.
+ * SRP/DRY check: Pass - single navbar component, no duplication
  */
 
 import { Link, useLocation } from "wouter";

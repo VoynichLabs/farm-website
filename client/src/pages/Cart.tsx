@@ -1,9 +1,11 @@
 /**
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
- * PURPOSE: Shopping cart and checkout page. Shows cart items, totals,
- *          and integrates Stripe Elements for payment when ready.
- * SRP/DRY check: Pass
+ * PURPOSE: Shopping cart and checkout page for Mark's Hobby Farm.
+ *          Shows cart items with quantity controls, order summary with totals,
+ *          and integrates Stripe Elements via StripeCheckout component for payment.
+ *          Depends on useAuth hook, useCart hook types, wouter, StripeCheckout component.
+ * SRP/DRY check: Pass - single cart/checkout page, no duplication
  */
 
 import { useState } from "react";
@@ -230,7 +232,7 @@ export function CartPage({ items, totalPrice, updateQuantity, removeItem, clearC
           )}
 
           <p className="text-xs text-gray-400 text-center">
-            Local pickup at 653 Pudding Hill Road, Hampton, CT
+            Local pickup at 653 Pudding Hill Road, Hampton, CT (Windham County)
           </p>
         </CardContent>
       </Card>

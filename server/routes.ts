@@ -1,10 +1,14 @@
 /**
  * Author: Cascade (Claude Sonnet)
  * Date: 2026-02-13
- * PURPOSE: Express API routes for farm website.
- *          Auth routes (Google OAuth), product listing, order/checkout, Stripe webhook.
- *          Adapted from ModelCompare modular route pattern, consolidated for simplicity.
- * SRP/DRY check: Pass
+ * PURPOSE: Express API routes for Mark's Hobby Farm. Defines all /api/* endpoints:
+ *          Auth (Google OAuth login/callback/me/logout), Products (list all, get by ID),
+ *          Checkout (POST /api/checkout creates Stripe PaymentIntent via server/stripe.ts),
+ *          Orders (GET user orders, GET single order), Stripe webhook (POST /api/stripe/webhook),
+ *          and health check. Uses isAuthenticated middleware from server/auth.ts for protected routes.
+ *          Adapted from ModelCompare modular route pattern -- consolidated into single router.
+ *          Depends on server/storage.ts, server/auth.ts, server/stripe.ts.
+ * SRP/DRY check: Pass - single route file, no duplication
  */
 
 import { Router } from "express";
